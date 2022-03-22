@@ -10,33 +10,37 @@ include_once "Fonctions.php";
   <title>Expérience</title>
   <link rel="stylesheet" href="stylesheet.css">
   <script src="script.js"></script>
-  <img src=images/fond.png id=fond class=fond alt=/>
 </head>
 
 
 </head>
 <body>
-    <div class = "row"> <!--Création d'une ligne où la navbar et le reste sont côtes à côtes-->
-        <div class = "col-3">
-          <!-- TODO <?php require_once "NavBarre.php"; ?> <!--Permet d'afficher la barre de navigation-->
-        </div>
-        <div class = "col-9">
-            <h1 >Bienvenue</h1>
-            <div class ="row">
-                <div class ="col-md-4 col-3"></div>
-                <div class ="Accueil col-md-8 col-9">Profil des expériences</div> <!--Affiche la phrase sur la droite de l'écran-->
-            </div>
- 
-  <div class ="experiences" id ="experiences">
-    <img src=images/fond.png id=fond class=fond alt=/> 
-      <div class = "brentre">
-        <p><i>Février - Juin 2021 </i></p>
-        <h2>Etude Bien Rentré - Maquettage UX </h2>
-        Etude via i2c, junior entreprise de l’ENSC. Réalisation d’un benchmark, charte graphique et d’une maquette dynamique d’application mobile. 
+    
+
+  <div class ="contenant">
+    <div class = "fond">
+      <img class ="fond" src="images/fond.png" alt="image">
+    </div>
+    <div class = "presentation">
+      <h1>Lottie Rocuet Portfolio</h1>
+      Bonjour à tous je suis la présidente du club poulpyboule, bien venu à vous dans min Portfolio
+    </div>    
+    <div class = "brentre">
+      <div class = "titre">
+      <h1> EXPERIENCES </h1>
       </div>
-      <form method = "get" action="Experiences.php" class ="Infos">
-        <!-- TODO : REMETTRE LES VARIABLES AU BON NOM DE LA BDD ET ENLEVER L'énoncé "DOMAINES", ETC-->
-        <div class ="cadre"> <!-- Affiche le cadre-->
+          <p><i>Février - Juin 2021 </i></p>
+          <h2>Etude Bien Rentré - Maquettage UX </h2>
+          Etude via i2c, junior entreprise de l’ENSC. Réalisation d’un benchmark, 
+          charte graphique et d’une maquette dynamique d’application mobile. 
+    </div>
+  </div>
+
+ 
+
+     <!-- <form method = "get" action="Experiences.php" class ="Infos">
+         TODO : REMETTRE LES VARIABLES AU BON NOM DE LA BDD ET ENLEVER L'énoncé "DOMAINES", ETC
+        <div class ="cadre">  Affiche le cadre
             <h2>
             <strong><?php echo $user["Type_Experience"]?> </strong></h2>
             <br/>
@@ -63,10 +67,10 @@ include_once "Fonctions.php";
             <?php echo $user["Rue_Organisation"]?> <br/>
             <?php echo $user["Ville_Entreprise"]?> - <?php echo $user["Code_postal_Organisation"]?>  <br/>                 
             <br/>
-            <!-- Affiche toutes les informations des expériences postées par un élève -->
+            
         </div>
         </form>
-    </div>
+    </div>-->
 
 </body>
 </html>

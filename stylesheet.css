@@ -1,61 +1,74 @@
 html,
-#fond {
-  /* Fixe l'image en haut à gauche de la page */
-  position: fixed;
-  top: 0;
-  left: 0;
-  /* Préserve le ratio de l'image */
-  min-width: 100%;
-  min-height: 100%;
-}
-#experiences {
-}
-
-img.fond {
-  /* On met en place le fond d'écran */
-  min-height: 100%;
-  min-width: 1024px;
-  /* On indique un redimensionnement proportionnel */
-  width: 100%;
-  height: auto;
-  /* L'image est positionnée en haut à gauche */
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-@media screen and (max-width: 1024px) {
-  /* Le traitement est ici spécifique à l'image */
-  img.fond {
-    left: 50%;
-    margin-left: -512px; /* 50% */
-  }
-}
 body {
   margin: 0;
   padding: 0;
-}
-body {
+
   font-family: monserrat, sans-serif;
-  /*background-image: url(images/fond.png);
-  background-position: 0%;
-  font-size: 100%;*/
+  /*  font-size: 100%;*/
   color: #e7d1c0;
 }
+.presentation {
+  position: start;
+  text-align: center;
+  color: #ffffff;
+  position: absolute;
+  justify-content: left;
+  justify-items: left;
+  font-display: left;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: left;
+  text-align: left;
+  scroll-padding: left;
+}
+.contenant {
+  position: start;
+  text-align: center;
+}
+.fond {
+  top: 360px;
+
+  width: 100%;
+  height: 100%;
+  background-position: fixed;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.brentre {
+  position: absolute;
+  justify-content: left;
+  justify-items: left;
+  font-display: left;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: left;
+  text-align: left;
+  scroll-padding: left;
+}
+.titre {
+  font-size: 250%;
+  position: fixed;
+  transform: rotate(90deg); /* Équivalent à rotateZ(45deg) */
+  justify-items: left;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  top: 20%;
+  right: 90%;
+}
+
 h1 {
   font-size: 200%;
-  padding: center;
-  text-align: center;
-  scroll-padding: center;
 }
 h2 {
   font-size: 150%;
-  padding-left: 15px;
 }
 p {
-  font-family: monserrat, sans-serif;
 }
-ul,
-li,
+
 td {
   color: black;
 }

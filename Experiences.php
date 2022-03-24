@@ -1,32 +1,74 @@
 <?php
-try
-{
-$bdd = new PDO(
-    'mysql:host=localhost;dbname=pii;charset=utf8',
-    'root',
-    ''
 
-}
-$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                echo 'Connexion réussie';
-            }
-            
-            /*On capture les exceptions si une exception est lancée et on affiche
-             *les informations relatives à celle-ci*/
-            catch(PDOException $e){
-              echo "Erreur : " . $e->getMessage();
-            }
-        
-// catch (Exception $e)
-// {
-//         die('Erreur : ' . $e->getMessage());
-// }
-// session_start();
-// include_once "Fonctions.php";
+include_once "Fonctions.php";
+// check_connected();
+//     if(!empty($_POST['Id_Pages']) && !empty($_POST['Titre'])) 
+//     {
+//       //1) on récupère les données via des post et des variables 
+//       $Id_User=$_SESSION['Id_User'];
+//       $Titre=$_POST['Titre'];
+//       $Id_Pages=$_POST['Id_Pages'];
+//       $DateDebut_organisation=$_POST['DateDebut_organisation'];
+//       $DateFin=$_POST['DateFin'];
+//       $Localisation=$_POST['Localisation'];
+//       $Description=$_POST['Description'];
+//       $Lien=$_POST['Lien'];
+//               $req2 =$bdd->prepare('INSERT INTO organisation
+//             (
+//             Nom_Organisation, 
+//             Type_Organisation, 
+//             Domaine_Entreprise, 
+//             Ville_Entreprise, 
+//             Rue_Organisation, 
+//             Code_postal_Organisation 
+//             )VALUES (?, ?, ?, ?, ?, ?)');
+// $req2=$req2->execute(array(
+//             $DateDebut_organisation, $Id_Pages_organisation, $activite_organisation, $ville_organisation, $adresse_organisation, $code_postal_organisation
+//             ));
+// $orga_id = $bdd->lastInsertId();
+//         // insert expérience into BD
+//         //$stmt = $bdd->prepare('select * from utilisateur where Id_Utilisateur=? and Mot_de_passe=?');
+//         $req =$bdd->prepare('INSERT INTO expérience (
+//             Titre_Experience, 
+//             Type_Experience, 
+//             Date_debut_Experience,
+//             Date_fin_Experience,
+//             Domaine_competence_1, 
+//             Domaine_competence_2, 
+//             Domaine_competence_3, 
+//             Secteur_d_activité_1, 
+//             Secteur_d_activité_2, 
+//             Secteur_d_activité_3, 
+//             Salaire, 
+//             Poste, 
+//             Description_Experience, 
+//             Region,
+//             Id_Organisation, 
+//             Id_Utilisateur
+//                 )VALUES (:Titre, :Id_Pages, :date_debut, :date_fin, :competence_1, :competence_2, :competence_3, :activite_1, :activite_2, :activite_3, :Lien, :Description, :description, :Localisation, :orga_id, :identifiant)');
+// $req=$req->execute(array(
+//       'Titre'=>$Titre,
+//       'Id_Pages'=>$Id_Pages,
+//       'date_debut'=>$date_debut,
+//       'date_fin'=>$date_fin,
+//       'competence_1'=>$competence_1,
+//       'competence_2'=>$competence_2,
+//       'competence_3'=>$competence_3,
+//       'activite_1'=>$activite_1,
+//       'activite_2'=>$activite_2,
+//       'activite_3'=>$activite_3,
+//       'Lien'=>$Lien,
+//       'Description'=>$Description,
+//       'description'=>$description,
+//       'Localisation'=>$Localisation,
+//       'orga_id'=>$orga_id,
+//       'identifiant'=>$identifiant
+//             ));
+//         header("Location: Mes_Experiences.php");
+//     }
 ?>
 
 
-<!doctype html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -61,9 +103,12 @@ $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
  
 
-     <!-- <form method = "get" action="Experiences.php" class ="Infos">
-         TODO : REMETTRE LES VARIABLES AU BON NOM DE LA BDD ET ENLEVER L'énoncé "DOMAINES", ETC
-        <div class ="cadre">  Affiche le cadre
+     <form method = "get" action="Experiences.php" class ="Experiences">
+         Test affichage
+          ==================================EN TRAVAUX============================
+
+          
+        <div class ="cadre">  //Affiche le cadre
             <h2>
             <strong><?php echo $user["Type_Experience"]?> </strong></h2>
             <br/>
@@ -93,7 +138,7 @@ $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
         </div>
         </form>
-    </div>-->
+    </div>
 
 </body>
 </html>

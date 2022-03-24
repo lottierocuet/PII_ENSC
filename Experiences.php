@@ -1,7 +1,7 @@
 <?php
 
 include_once "Fonctions.php";
-// check_connected();
+check_connected();
 //     if(!empty($_POST['Id_Pages']) && !empty($_POST['Titre'])) 
 //     {
 //       //1) on récupère les données via des post et des variables 

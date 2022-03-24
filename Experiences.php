@@ -1,5 +1,28 @@
 <?php
-include_once "Fonctions.php";
+try
+{
+$bdd = new PDO(
+    'mysql:host=localhost;dbname=pii;charset=utf8',
+    'root',
+    ''
+
+}
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                echo 'Connexion réussie';
+            }
+            
+            /*On capture les exceptions si une exception est lancée et on affiche
+             *les informations relatives à celle-ci*/
+            catch(PDOException $e){
+              echo "Erreur : " . $e->getMessage();
+            }
+        
+// catch (Exception $e)
+// {
+//         die('Erreur : ' . $e->getMessage());
+// }
+// session_start();
+// include_once "Fonctions.php";
 ?>
 
 
@@ -23,7 +46,7 @@ include_once "Fonctions.php";
     </div>
     <div class = "presentation">
       <h1>Lottie Rocuet Portfolio</h1>
-      Bonjour à tous je suis la présidente du club poulpyboule, bien venu à vous dans min Portfolio
+      Bonjour à tous je suis la présidente du club poulpyboule, bien venu à vous dans mon Portfolio
     </div>    
     <div class = "brentre">
       <div class = "titre">

@@ -8,6 +8,7 @@ body {
   color: #e7d1c0;
 }
 .presentation {
+  font-size: 200%;
   position: start;
   text-align: center;
   color: #ffffff;
@@ -25,6 +26,9 @@ body {
 .contenant {
   position: start;
   text-align: center;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
 }
 .fond {
   top: 360px;
@@ -41,7 +45,7 @@ body {
   justify-content: left;
   justify-items: left;
   font-display: left;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: left;
@@ -49,14 +53,12 @@ body {
   scroll-padding: left;
 }
 .titre {
-  font-size: 250%;
+  font-size: 230%;
   position: fixed;
   transform: rotate(90deg); /* Équivalent à rotateZ(45deg) */
   justify-items: left;
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-  top: 20%;
+  top: 1%;
+  bottom: 90%;
   right: 90%;
 }
 

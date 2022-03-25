@@ -13,7 +13,7 @@ function check_connected(){
 }
 
 $error = null;
-
+$Type=null;
 
 if (isset($_SESSION['Id_User'])) {
 	$query = $bdd->prepare('SELECT * FROM Utilisateur WHERE Id_User = Lottie');
@@ -23,12 +23,16 @@ if (isset($_SESSION['Id_User'])) {
 
 
 // --------------------TO DO -------------------------------------------------
-function check_type() {  // FINIR FONCTION (EXPERIENCES OU FORMATIONS)
-	check_connected();
-	if ($_type['Type'] != 1) {
-		return false;
-	}
-	else { return true; }
-}
+// function check_type() {  // FINIR FONCTION (EXPERIENCES OU FORMATIONS)
+// 	check_connected();
+// 	if ($Type['Type'] != 1) {
+// 		return false;//Si type =1 alors c'est une formation
+// 	}
+// 	else { return true; }
+//     $id =$_SESSION['identifiant'];
+//     $query = $bdd->prepare("SELECT * FROM utilisateur, elève  WHERE utilisateur.Id_Utilisateur = ? ");
+//     $query -> execute(array($id));
+//     $ligne= $query->fetch()
+// }
 
 ?>

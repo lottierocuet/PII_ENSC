@@ -14,7 +14,7 @@ if (!empty($_GET['Id_User']) and !empty($_GET['Mdp']) ) {
 
     if (isset($_SESSION['Id_User'])) {
             $_SESSION['Id_User'] = $Id_User;
-            header ('Experiences.php');
+            header ('ModifPages.php');
         }
         else {
             $error = "Utilisateur non reconnu ou non autorisé";

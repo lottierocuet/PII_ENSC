@@ -3,18 +3,21 @@
 include_once "Fonctions.php";
 check_connected();
 $error=null;
-if (!empty($_GET['Id_User']) and !empty($_GET['Mdp']) ) {
+// Debuguer car je fais une requete avec une var inexistante juste en dessous
+if (!empty($_POST['Id_User']) and !empty($_POST['Mdp']) ) {
     //On met le post Id_User dans la variable $Id_User
-    $Id_User = $_GET['Id_User'];
+    $Id_User = $_POST['Id_User'];
     //On met le post Mdp dans la variable $Mdp
-    $Mdp = $_GET['Mdp'];
+    $Mdp = $_POST['Mdp'];
     $stmt = $bdd->prepare('SELECT * FROM Utilisateur WHERE Id_User = Lottie and Mdp=piiensc2022');
+    // Verifier que le couple id et mdp existe dans la bdd 
+    //Pas besoin de vérifier que ce qu'on recoit du formulaire soit totalement égale au contenu de la bdd 
     $stmt->execute(array($Id_User, $Mdp));
     $res = $stmt->fetch();
 
     if (isset($_SESSION['Id_User'])) {
             $_SESSION['Id_User'] = $Id_User;
-            header ('ModifPages.php');
+            header ('Experiences.php');
         }
         else {
             $error = "Utilisateur non reconnu ou non autorisé";
@@ -45,7 +48,7 @@ if (!empty($_GET['Id_User']) and !empty($_GET['Mdp']) ) {
                         <?= $error ?>
                     </div>
                 <?php } ?>
-                <form method="post" action="?" class ="cadre"> <!--Commence le formulaire et affiche le cadre-->
+                <form method="post" action="Index.php" class ="cadre"> <!--Commence le formulaire et affiche le cadre-->
                     <p>
                         <strong>Rentre tes identifiants bg : </strong> <br/>
                         <br/>

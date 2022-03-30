@@ -1,3 +1,5 @@
+html {
+}
 .body {
   margin: 0px;
 }
@@ -13,27 +15,32 @@
   font-family: monserrat, sans-serif;
   color: #e7d1c0;
   position: fixed;
-  transform: rotate(90deg); /* Équivalent à rotateZ(45deg) */
-  font-size: 230%;
-  padding-top: -2%;
-  top: 30%;
+  transform: rotate(90deg);
+  font-size: 200%;
+  top: 40%;
   left: -15%;
-  /* scroll-padding-block-end: ; */
 }
 
 .contenant {
   margin: 0px;
   background-image: url(images/fond.png);
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: local;
   background-size: 100%;
   font-family: monserrat, sans-serif;
   color: #e7d1c0;
   text-align: left;
   display: flex;
   flex-direction: column;
-  margin-top: auto;
   row-gap: 70px;
   justify-content: center;
   padding-left: 10%;
 }
+/* .img:hover {
+  zoom: 50%;
+}
+.img {
+  align-self: flex-end;
+  height: 50px;
+  width: 50px;
+} */

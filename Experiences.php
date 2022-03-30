@@ -1,9 +1,9 @@
 <?php
 
 include_once "Fonctions.php";
-check_connected();
-session_start();
-include_once "Fonctions.php";
+//dateUS_toFR();
+// check_connected();
+// session_start();
     
 
     $req = $bdd->query('SELECT * FROM pages  WHERE pages.Type = 0 ');
@@ -21,26 +21,23 @@ include_once "Fonctions.php";
  
 </head>  
 
-
+<!-- =============================Présentation générale du site===================================== -->
+ 
 
 <body>
   <div class ="contenant">
-  <!-- =============================Présentation générale du site===================================== -->
+  <!-- Présentation générale de la page ===================================== -->
+      <div class = "titre">
+        <h1> EXPERIENCES </h1>
+      </div>
+      <!-- =============================Présentation générale du site===================================== -->
   <div class = "presentation">  
         <h2>Lottie Rocuet Portfolio</h2>
         Bonjour à tous je suis la présidente du club poulpyboule, bien venu à vous dans mon Portfolio
   </div> 
 
-<!-- =============================Présentation générale du site===================================== -->
-<!-- Présentation générale de la page ===================================== -->
-      <div class = "titre">
-        <h1> EXPERIENCES </h1>
-      </div> 
+
     
-  
-    <!-- <div class = "fond"> 
-      <img class ="fond" src="images/fond.png" alt="image">
-    </div>  -->
 
     <!-- Présentation générale d'une expérience témoin ===================================== -->
     <div>
@@ -55,7 +52,13 @@ include_once "Fonctions.php";
     
       <?php foreach ($req as $result) { ?>
         <div>
-          <?php echo $result["DateDebut"]?> - <?php echo $result["DateFin"]?>
+	
+        <?php
+        echo $result["DateDebut"];?> 
+        -
+        <?php echo $result["DateFin"];
+        ?>
+
           <h2>
           <strong>
             <?php echo $result["Titre"]?> 
@@ -66,10 +69,12 @@ include_once "Fonctions.php";
         
             <?php echo $result["Description"]?> 
         
-        <a href="images/link.png"<?= $result['Lien'] ?>>
-                 
-     
+        <div class ="lien">
+            <a href=<?= $result['Lien'] ?> target="_blank">
+        <img src="images/link.png"alt="Lien vers site externe"/>     
         </a>
+        </div>
+
       </div>
       <?php }?>
     

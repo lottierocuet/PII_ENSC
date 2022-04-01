@@ -38,9 +38,9 @@ html {
 }
 /* .img:hover {
   zoom: 50%;
-}
-.img {
+}*/
+img {
   align-self: flex-end;
   height: 50px;
   width: 50px;
-} */
+}

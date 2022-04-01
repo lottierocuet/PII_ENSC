@@ -1,7 +1,7 @@
-html {
-}
-.body {
-  margin: 0px;
+html,
+body{
+  margin:0;
+  padding:0
 }
 
 .presentation {
@@ -22,7 +22,7 @@ html {
 }
 
 .contenant {
-  margin: 0px;
+  border: 0px;
   background-image: url(images/fond.png);
   background-repeat: no-repeat;
   background-attachment: local;
@@ -33,14 +33,23 @@ html {
   display: flex;
   flex-direction: column;
   row-gap: 70px;
-  justify-content: center;
   padding-left: 10%;
 }
-/* .img:hover {
-  zoom: 50%;
-}*/
-img {
-  align-self: flex-end;
-  height: 50px;
-  width: 50px;
+.experiences{
+  width:90%;
 }
+
+.lien{
+  display: flex;
+  /* align-items: right; */
+  justify-content: flex-end;
+} 
+img {
+  size: 10%;
+  padding : 2%;
+  padding-right: 500%;
+  display: flex;
+  align-items: right;
+  
+}
+

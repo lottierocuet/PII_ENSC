@@ -27,20 +27,20 @@ include_once "Fonctions.php";
 <body>
   <div class ="contenant">
   <!-- Présentation générale de la page ===================================== -->
-      <div class = "titre">
-        <h1> EXPERIENCES </h1>
-      </div>
-      <!-- =============================Présentation générale du site===================================== -->
-  <div class = "presentation">  
-        <h2>Lottie Rocuet Portfolio</h2>
+    <div class = "titre">
+      <h1> EXPERIENCES </h1>
+    </div>
+    <!-- =============================Présentation générale du site===================================== -->
+    <div class = "presentation">  
+      <h2>Lottie Rocuet Portfolio</h2>
         Bonjour à tous je suis la présidente du club poulpyboule, bien venu à vous dans mon Portfolio
-  </div> 
+    </div> 
 
 
     
-
+    
     <!-- Présentation générale d'une expérience témoin ===================================== -->
-    <div>
+    <div class="experiences">
       <p><i>Février - Juin 2021 </i></p>
       <h2>Etude Bien Rentré - Maquettage UX </h2>
       <p>Etude via i2c, junior entreprise de l’ENSC. Réalisation d’un benchmark, 
@@ -48,10 +48,11 @@ include_once "Fonctions.php";
       </p>
     </div>
     
+    
     <!--========================= Permet d'afficher toutes les expériences ========================= -->
     
       <?php foreach ($req as $result) { ?>
-        <div>
+      <div class="experiences">    
 	
         <?php
         echo $result["DateDebut"];?> 
@@ -69,7 +70,7 @@ include_once "Fonctions.php";
         
             <?php echo $result["Description"]?> 
         
-        <div class ="lien">
+        <div class="lien">
             <a href=<?= $result['Lien'] ?> target="_blank">
         <img src="images/link.png"alt="Lien vers site externe"/>     
         </a>

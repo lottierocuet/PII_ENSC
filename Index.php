@@ -36,10 +36,7 @@ if (!empty($_POST['Id_User']) and !empty($_POST['Mdp']) ) {
     </head>
     <body>
     <div class ="contenant">
-        <div class = "fond">
-        <img class ="fond" src="images/fond.png" alt="image">
-        </div>
-                   
+                           
             <div class = "presentation">
                 <h1 >Bienvenue sur ma page perso pour modifier mes pages</h1>
                 

@@ -16,17 +16,21 @@ body{
   color: #e7d1c0;
   position: fixed;
   transform: rotate(90deg);
-  font-size: 200%;
-  top: 40%;
-  left: -15%;
+  font-size: 120%;
+  /* padding-left:10%; */
+  top: 40%; 
+  left: -10%; 
+  opacity:80%;
 }
 
 .contenant {
-  border: 0px;
   background-image: url(images/fond.png);
   background-repeat: no-repeat;
-  background-attachment: local;
+  background-attachment: static;
   background-size: 100%;
+  /* min-width: 1920px;*/
+  min-height: 1080px; 
+  background-position: 100%;
   font-family: monserrat, sans-serif;
   color: #e7d1c0;
   text-align: left;
@@ -35,21 +39,32 @@ body{
   row-gap: 70px;
   padding-left: 10%;
 }
-.experiences{
-  width:90%;
-}
+
 
 .lien{
   display: flex;
-  /* align-items: right; */
   justify-content: flex-end;
 } 
+
 img {
   size: 10%;
-  padding : 2%;
-  padding-right: 500%;
+  /* padding : 2%; */
+  margin-right: 50%;
   display: flex;
   align-items: right;
+   
   
+}
+
+.cadre{
+  border-color:#e7d1c0;
+  opacity: 80%;
+  border-radius: 10px;
+  background-color: #e7d1c0;
+  width: 80%;
+  padding-left: 5%;
+  color:black;
+
+
 }
 

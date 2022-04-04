@@ -6,7 +6,7 @@ include_once "Fonctions.php";
 // session_start();
     
 
-    $req = $bdd->query('SELECT * FROM pages  WHERE pages.Type = 0 ');
+    $req = $bdd->query('SELECT * FROM projets   ');
 ?>
 
 
@@ -14,35 +14,25 @@ include_once "Fonctions.php";
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Expérience</title>
+  <title>Projets</title>
   <link rel="stylesheet" href="stylesheet.css">
   <!-- <script src="script.js"></script> -->
 
  
 </head>  
 
-<!-- =============================Présentation générale du site===================================== -->
- 
-
 <body>
-  <div class = "titre">
-      <h1> EXPERIENCES </h1>
-    </div>
   <div class ="contenant">
-  <!-- Présentation générale de la page ===================================== -->
-    
-    <!-- =============================Présentation générale du site===================================== -->
-    <div class = "presentation">  
-      <h2>Lottie Rocuet Portfolio</h2>
-        Bonjour à tous je suis la présidente du club poulpyboule, bien venu à vous dans mon Portfolio
-    </div> 
-
-    
-    
+<div class = "titre">
+      <h1> PROJETS </h1>
+    </div>
+   
+  <!--`Id_Projets`, `Titre`, `DateDebut`, `DateFin`, 
+  `Contexte`, `Description`, `CodHexTypo`, `LienImgFond`, `Lien`, `Id_User     -->
     <!--========================= Permet d'afficher toutes les expériences ========================= -->
     
       <?php foreach ($req as $result) { ?>
-      <div class="experiences">    
+       <div class="experiences"> <!--  TODO FAIRE CSS PROJETS  -->
 	
         <?php
         echo $result["DateDebut"];?> 
@@ -54,19 +44,19 @@ include_once "Fonctions.php";
           <strong>
             <?php echo $result["Titre"]?> 
           </strong> - 
-            <?php echo $result["Localisation"]?>
+            <?php echo $result["Contexte"]?>
           </h2>
         
         
             <?php echo $result["Description"]?> 
-      </div>  
+        
         <div class="lien">
             <a href=<?= $result['Lien'] ?> target="_blank">
         <img src="images/link.png"alt="Lien vers site externe"/>     
         </a>
         </div>
 
-      
+      </div>
       <?php }?>
     
            

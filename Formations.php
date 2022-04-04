@@ -6,7 +6,7 @@ include_once "Fonctions.php";
 // session_start();
     
 
-    $req = $bdd->query('SELECT * FROM pages  WHERE pages.Type = 0 ');
+    $req = $bdd->query('SELECT * FROM pages  WHERE pages.Type = 1 ');
 ?>
 
 
@@ -14,28 +14,25 @@ include_once "Fonctions.php";
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Expérience</title>
+  <title>Formations</title>
   <link rel="stylesheet" href="stylesheet.css">
   <!-- <script src="script.js"></script> -->
 
  
 </head>  
 
-<!-- =============================Présentation générale du site===================================== -->
- 
-
 <body>
-  <div class = "titre">
-      <h1> EXPERIENCES </h1>
+  
+<div class = "titre">
+      <h1> FORMATIONS </h1>
     </div>
   <div class ="contenant">
   <!-- Présentation générale de la page ===================================== -->
     
-    <!-- =============================Présentation générale du site===================================== -->
-    <div class = "presentation">  
-      <h2>Lottie Rocuet Portfolio</h2>
-        Bonjour à tous je suis la présidente du club poulpyboule, bien venu à vous dans mon Portfolio
-    </div> 
+
+
+
+    
 
     
     
@@ -59,14 +56,14 @@ include_once "Fonctions.php";
         
         
             <?php echo $result["Description"]?> 
-      </div>  
+        
         <div class="lien">
             <a href=<?= $result['Lien'] ?> target="_blank">
         <img src="images/link.png"alt="Lien vers site externe"/>     
         </a>
         </div>
 
-      
+      </div>
       <?php }?>
     
            

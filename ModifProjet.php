@@ -3,7 +3,7 @@
 include_once "Fonctions.php";
 // check_gestionnaire();
 // check_connected();
-    if(!empty($_POST['Id_Pages']) && !empty($_POST['Type'])) 
+    if(!empty($_POST['Id_Projets']) && !empty($_POST['Type'])) 
     {
       //1) on récupère les données via des post et des variables 
       $Titre=$_POST['Titre'];
@@ -62,7 +62,7 @@ $req=$req->execute(array(
                 <br/>
                 <br/>
                 <form method="post" action="ModifPages.php" class ="cadre"> <!-- Commence le formulaire et affiche le cadre-->
-                    <label for="Titre">Intitulé de l'expérience :</label> 
+                    <label for="Titre">Intitulé du Projet :</label> 
                     <br/>
                     <input type="text" name="Titre" required/> <br/>
                     <br/><br/>
@@ -101,7 +101,7 @@ $req=$req->execute(array(
                 </form>
 
                 <div class="button">
-                <a href="ModifPages.php">Acceder aux pages</a>
+                <a href="ModifProjet.php">Acceder aux pages</a>
                 </div>
             </div>
         </div>

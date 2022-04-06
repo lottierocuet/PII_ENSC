@@ -5,12 +5,15 @@
     'root',
     ''
     );    
+	// activation des erreurs PDO
+	$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       
 function check_connected(){
     if(!isset($_SESSION['Id_User'])){
 
     }
 }
+
 
 $error = null;
 $Type=null;

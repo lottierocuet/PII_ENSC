@@ -10,36 +10,40 @@ include_once "Fonctions.php";
       $Type=$_POST['Type'];
       $DateDebut=$_POST['DateDebut'];
       $DateFin=$_POST['DateFin'];
-      $Localistaion=$_POST['Localisation'];
+      $Localisation=$_POST['Localisation'];
       $Description=$_POST['Description'];
       $Lien=$_POST['Lien'];
       $LienImg=$_POST['LienImg'];
+      
      
         // insert expérience into BD
         //$stmt = $bdd->prepare('select * from utilisateur where Id_Utilisateur=? and Mot_de_passe=?');
-        $req =$bdd->prepare('INSERT INTO pages (
-            Titre,
-            Type,
-            DateDebut,
-            DateFin,
-            Localisation,
-            Description, 
-            Lien,
-            LienImg
-                )VALUES (:Titre, :Type, :DateDebut, :DateFin, :Localisation, :Description, :Lien, :LienImg)');
-$req=$req->execute(array(
-      'Titre'=>$Titre,
-      'Type'=>$Type,
-      'DateDebut'=>$DateDebut,
-      'DateFin'=>$DateFin,
-      'Localisation'=>$Localisation,
-      'Description'=>$Description,
-      'Lien'=>$Lien,
-      'LienImg'=>$LienImg,
-        ));
-        header("Location: ModifPages.php");
+        $req =$bdd->prepare("INSERT INTO 'pages' (
+            'Titre',
+            'Type',
+            'DateDebut',
+            'DateFin',
+            'Localisation',
+            'Description', 
+            'Lien',
+            'LienImg'
+                )VALUES (:Titre, :DateDebut, :DateFin, :Localisation, :Description, :Lien, :LienImg)");
+        
+        $req=$req->execute(array(
+            'Titre'=>$Titre,
+            'Type'=>$Type,
+            'DateDebut'=>$DateDebut,
+            'DateFin'=>$DateFin,
+            'Description'=>$Description,
+            'Lien'=>$Lien,
+            'LienImg'=>$LienImg
+            ));
+            header("Location: ModifProjet.php");
     }
-    ?>
+
+?>
+
+
   <!doctype html>
 <html>
     <head>
@@ -58,6 +62,10 @@ $req=$req->execute(array(
                 <br/>
                 <br/>
                 <form method="post" action="ModifPages.php" class ="cadre"> <!-- Commence le formulaire et affiche le cadre-->
+                    <label for="Id_Pages">Id de la page :</label> 
+                    <input type="text" name="Id_Pages" required/> <br/>
+                    <br/>    
+
                     <label for="Titre">Intitulé de l'expérience :</label> 
                     <input type="text" name="Titre" required/> <br/>
                     <br/>

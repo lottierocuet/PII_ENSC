@@ -9,7 +9,8 @@ if (!empty($_POST['Id_User']) and !empty($_POST['Mdp']) ) {
     $Id_User = $_POST['Id_User'];
     //On met le post Mdp dans la variable $Mdp
     $Mdp = $_POST['Mdp'];
-    $stmt = $bdd->prepare('SELECT * FROM Utilisateur WHERE Id_User = Lottie and Mdp=piiensc2022');
+
+    $stmt = $bdd->prepare('SELECT * FROM Utilisateur WHERE Id_User = "Lottie" and Mdp="piiensc2022"');
     // Verifier que le couple id et mdp existe dans la bdd 
     //Pas besoin de vérifier que ce qu'on recoit du formulaire soit totalement égale au contenu de la bdd 
     $stmt->execute(array($Id_User, $Mdp));

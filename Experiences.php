@@ -61,7 +61,15 @@ include_once "Fonctions.php";
             <?php echo $result["Description"]?> 
       </div>  
         <div class="lien">
-            <a href=<?= $result['Lien'] ?> target="_blank">
+        <a  target="_blank">
+        <img src="images/supprimer.png"alt="Lien vers site externe"/>     
+        </a>
+
+        <a  target="_blank">
+        <img src="images/modifier.png"alt="Lien vers site externe"/>     
+        </a>
+
+        <a href=<?= $result['Lien'] ?> target="_blank">
         <img src="images/link.png"alt="Lien vers site externe"/>     
         </a>
         </div>

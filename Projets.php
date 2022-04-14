@@ -32,7 +32,7 @@ include_once "Fonctions.php";
     <!--========================= Permet d'afficher toutes les expériences ========================= -->
     
       <?php foreach ($req as $result) { ?>
-       <div class="experiences"> <!--  TODO FAIRE CSS PROJETS  -->
+       <div class="projets"> <!--  TODO FAIRE CSS PROJETS  -->
 	
         <?php
         echo $result["DateDebut"];?> 

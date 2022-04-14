@@ -7,6 +7,45 @@ include_once "Fonctions.php";
     
 
     $req = $bdd->query('SELECT * FROM pages  WHERE pages.Type = 1 ');
+
+    // MODIFIER UNE PAGE
+  if( !empty($_POST['Type'])&&!empty($_POST['Titre']))
+  { 
+    //1) on récupère les données via des post et des variables 
+    $Titre=$_POST['Titre'];
+    $Type=$_POST['Type'];
+    $DateDebut=$_POST['DateDebut'];
+    $DateFin=$_POST['DateFin'];
+    $Localisation=$_POST['Localisation'];
+    $Description=$_POST['Description'];
+    $Lien=$_POST['Lien'];
+    $LienImg=$_POST['LienImg'];
+
+
+    $req =$bdd->prepare("UPDATE 'pages'
+      SET
+      `Titre`=:Titre,
+      `Type`=:Titre, 
+      `DateDebut`=:DateDebut, 
+      `DateFin`=:DateFin, 
+      `Localisation`=:Localisation, 
+      `Description`=:Description, 
+      `Lien`=:Lien, 
+      `LienImg`=:LienImg 
+      ");
+    
+                  
+    $req->execute(array(
+      $Titre,
+      $Type,
+      $DateDebut,
+      $DateFin,
+      $Localisation,
+      $Description,
+      $Lien,
+      $LienImg,
+    ));
+  }
 ?>
 
 

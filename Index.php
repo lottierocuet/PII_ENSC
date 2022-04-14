@@ -1,28 +1,39 @@
 <?php
 
 include_once "Fonctions.php";
-check_connected();
+// check_connected();
 $error=null;
 // Debuguer car je fais une requete avec une var inexistante juste en dessous
-if (!empty($_POST['Id_User']) and !empty($_POST['Mdp']) ) {
+if (!empty($_POST['Id_User']) && !empty($_POST['Mdp']) ) {
     //On met le post Id_User dans la variable $Id_User
     $Id_User = $_POST['Id_User'];
     //On met le post Mdp dans la variable $Mdp
     $Mdp = $_POST['Mdp'];
+    print_r($_POST);
 
-    $stmt = $bdd->prepare('SELECT * FROM Utilisateur WHERE Id_User = "Lottie" and Mdp="piiensc2022"');
+
+    $stmt = $bdd->prepare('SELECT COUNT(*) AS nb FROM utilisateur WHERE Id_User = ? and mdp=?');
     // Verifier que le couple id et mdp existe dans la bdd 
     //Pas besoin de vérifier que ce qu'on recoit du formulaire soit totalement égale au contenu de la bdd 
     $stmt->execute(array($Id_User, $Mdp));
     $res = $stmt->fetch();
+    print_r($res);
 
-    if (isset($_SESSION['Id_User'])) {
-            $_SESSION['Id_User'] = $Id_User;
-            header ('Experiences.php');
-        }
-        else {
-            $error = "Utilisateur non reconnu ou non autorisé";
-        }
+    if ($res['nb']==1)
+    {
+        $_SESSION['Id_User'] = $Id_User;
+            header ('Location: Experiences.php');
+
+    }
+    else {
+        $error = "Utilisateur non reconnu ou non autorisé";
+    }
+
+    // if (isset($_SESSION['Id_User'])) {
+    //         $_SESSION['Id_User'] = $Id_User;
+    //         header ('Experiences.php');
+    //     }
+        
  
 }
 
@@ -61,7 +72,6 @@ if (!empty($_POST['Id_User']) and !empty($_POST['Mdp']) ) {
                             
                         </div>
                         <input class = "inscription" type="submit" value="Se connecter"/>
-                        <?php header ('Experiences.php'); ?>
                     </p>
                 </form>
                 

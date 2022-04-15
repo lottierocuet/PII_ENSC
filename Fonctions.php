@@ -17,13 +17,15 @@
 	{
 		if(!isset($_SESSION['Id_User']))
 		{
-			return false;
-
-
+			return false;//false
+			
 		}
 		else{
 
-			return false;
+			return true;
+			$_SESSION['Id_User'] = $Id_User;
+						
+			
 		}
 
 	}

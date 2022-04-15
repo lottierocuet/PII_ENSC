@@ -27,7 +27,7 @@ body{
 .contenant {
   background-image: url(images/fond.png);
   background-repeat: no-repeat;
-  background-attachment: static;
+  background-attachment:fixed;
   background-size: 100%;
   min-height: 1080px; 
   background-position: 100%;

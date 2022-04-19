@@ -4,14 +4,14 @@ include_once "Fonctions.php";
 // check_gestionnaire();
 check_connected();
 
-    if( !empty($_POST['Titre']) && !empty($_POST['Description'])&& !empty($_POST['CodeHexTypo']))
+    if( !empty($_POST['Titre']) && !empty($_POST['Description'])&&!empty($_POST['CodHexTypo']))
     {
       //1) on récupère les données via des post et des variables 
       $Titre=$_POST['Titre'];
       $Contexte=$_POST['Contexte'];
+      $Description=$_POST['Description'];
       $DateDebut=$_POST['DateDebut'];
       $DateFin=$_POST['DateFin'];
-      $Description=$_POST['Description'];
       $Lien=$_POST['Lien'];
       $LienImg=$_POST['LienImg'];
       $CodHexTypo=$_POST['CodeHexTypo'];
@@ -35,12 +35,12 @@ check_connected();
         $req->execute(array(
             $Titre,
             $Contexte,
+            $Description,
             $DateDebut,
             $DateFin,
-            $Description,
             $Lien,
             $LienImg,
-            $CodeHexTypo,
+            $CodHexTypo,
         ));
             
     }
@@ -99,7 +99,7 @@ check_connected();
                     <textarea  name="LienImg"></textarea> <br/>
                     <br/><br/>
 
-                    <label for="CodeHexTypo">Couleur de la typo</label> 
+                    <label for="CodHexTypo">Couleur de la typo</label> 
                     <br/> 
                     <input  type="color" />
                     <br/><br/>

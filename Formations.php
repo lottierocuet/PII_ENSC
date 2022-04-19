@@ -4,55 +4,17 @@ include_once "Fonctions.php";
 include_once "NavBarre.php";
 check_connected(); 
 session_start();
-  //dateUS_toFR();
 
     
 
     $req = $bdd->query('SELECT * FROM pages  WHERE pages.Type = 1 ');
 
-    // MODIFIER UNE PAGE
-  if( !empty($_POST['Type'])&&!empty($_POST['Titre']))
-  { 
-    //1) on récupère les données via des post et des variables 
-    $Titre=$_POST['Titre'];
-    $Type=$_POST['Type'];
-    $DateDebut=$_POST['DateDebut'];
-    $DateFin=$_POST['DateFin'];
-    $Localisation=$_POST['Localisation'];
-    $Description=$_POST['Description'];
-    $Lien=$_POST['Lien'];
-    $LienImg=$_POST['LienImg'];
 
-
-    $req =$bdd->prepare("UPDATE 'pages'
-      SET
-      `Titre`=:Titre,
-      `Type`=:Titre, 
-      `DateDebut`=:DateDebut, 
-      `DateFin`=:DateFin, 
-      `Localisation`=:Localisation, 
-      `Description`=:Description, 
-      `Lien`=:Lien, 
-      `LienImg`=:LienImg 
-      ");
-    
-                  
-    $req->execute(array(
-      $Titre,
-      $Type,
-      $DateDebut,
-      $DateFin,
-      $Localisation,
-      $Description,
-      $Lien,
-      $LienImg,
-    ));
-  }
 ?>
 
 
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
   <meta charset="utf-8">
   <title>Formations</title>
@@ -75,10 +37,13 @@ session_start();
       <div class="experiences">    
 	
         <?php
-        echo $result["DateDebut"];?> 
-        -
-        <?php echo $result["DateFin"];
-        ?>
+        $dateDeb = date_create( $result['DateDebut']);
+        echo date_format($dateDeb,"F-Y");?> 
+          -
+        <?php 
+        $dateFin = date_create( $result['DateFin']);
+        echo date_format($dateFin,"F-Y");  ?> 
+        
 
           <h2>
           <strong>
@@ -89,33 +54,31 @@ session_start();
         
         
             <?php echo $result["Description"]?> 
+            
+           
         
-        <div class="lien">
+            <?php if (check_connected()==true) {?>
+            <div class="lien">
+
+               
+            <a>  
+              <img src="images/supprimer.png"alt="Lien vers site externe"/>     
+            </a>     
+
+            <a>      
+              <img src="images/modifier.png"alt="Lien vers site externe"/>     
+            </a>  
+               
             <a href=<?= $result['Lien'] ?> target="_blank">
-        <img src="images/link.png"alt="Lien vers site externe"/>     
-        </a>
-        </div>
-
-      </div>
-      
-
-          <?php if (check_connected()==true) {?>
-          <div class="lien">
-                
-          <a>  
-            <img src="images/supprimer.png"alt="Lien vers site externe"/>     
-          </a>     
-
-          <a>      
-            <img src="images/modifier.png"alt="Lien vers site externe"/>     
-          </a>     
-
-            <a href=<?= $result['Lien'] ?> target="_blank">
-            <img src="images/link.png"alt="Lien vers site externe"/>     
-            </a>
-          </div>
+              <img src="images/link.png"alt="Lien vers site externe"/>     
+            </a> 
+              
+            </div>
 
         <?php }?>
+
+      </div>
+         
       <?php }?>
 
         <?php if (check_connected()==true) {?>

@@ -22,7 +22,7 @@
 		}
 		else{
 
-			return false;
+			return true;//SI sur false c'est un test
 			$_SESSION['Id_User'] = $Id_User;
 						
 			
@@ -34,14 +34,6 @@
 	$error = null;
 	$Type=null;
 
-
-	/* Traduit une date au format US vers le format FR */
-	function dateUS_toFR($dateUS)
-		{	
-			list($annee, $mois, $jour) = split('[-.]', $dateUS);
-			$dateFR=$jour."/".$mois."/".$annee;
-			return $dateFR;
-		}
 
 
 

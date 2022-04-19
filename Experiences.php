@@ -53,11 +53,13 @@
   <?php foreach ($req as $result) { ?>
       <div class="experiences">    
 	
-        <?php
-        echo $result["DateDebut"];?> 
-        -
-        <?php echo $result["DateFin"];
-        ?>
+      <?php
+        $dateDeb = date_create( $result['DateDebut']);
+        echo date_format($dateDeb,"F-Y");?> 
+          -
+        <?php 
+        $dateFin = date_create( $result['DateFin']);
+        echo date_format($dateFin,"F-Y");  ?> 
 
           <h2>
           <strong>

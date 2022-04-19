@@ -3,11 +3,17 @@
 include_once "Fonctions.php";
 include_once "NavBarre.php";
 check_connected();
-  //dateUS_toFR();
-  // session_start();
+session_start();
     
 
     $req = $bdd->query('SELECT * FROM projets   ');
+
+    if(isset($_GET['suppr']) )
+    {
+      $bdd->query('DELETE *FROM projets ');
+    }
+
+
 ?>
 
 
@@ -49,11 +55,13 @@ check_connected();
        
       </style>
  
-       
       <?php
-      echo $result["DateDebut"];?> 
-      -
-      <?php echo $result["DateFin"];?>
+        $dateDeb = date_create( $result['DateDebut']);
+        echo date_format($dateDeb,"F-Y");?> 
+          -
+        <?php 
+        $dateFin = date_create( $result['DateFin']);
+        echo date_format($dateFin,"F-Y");  ?> 
 
     <div class="titreProj">  
       <h2>
@@ -72,9 +80,17 @@ check_connected();
       <?php if (check_connected()==true) {?>
         <div class="lien">
             
-          <a>  
-            <img src="images/supprimer.png"alt="Lien vers site externe"/>     
-          </a>     
+        <a>  
+        <input name="suppr" src="images/supprimer.png" type="submit" >  
+            <!-- <img alt="Lien vers site externe"/>  -->
+          <?$result ;
+
+          if(mysql_query($query)){
+            echo 'le texte '.$_POST['Titre'].' est supprimé.'; 
+          }?>
+
+           
+        </a>     
 
           <a>      
             <img src="images/modifier.png"alt="Lien vers site externe"/>     

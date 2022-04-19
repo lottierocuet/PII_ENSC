@@ -50,7 +50,15 @@ body{
   opacity:100%;
 }
 
-
+a{
+   display: flex;
+  justify-content: flex-end; 
+  flex-direction: row; 
+  row-gap: 10%;
+  padding: 5%;
+  justify-content: space-around;
+  align-items: right;
+}
 .lien{
   display: flex;
   justify-content: flex-end;
@@ -113,6 +121,7 @@ a {
   font-size: 120%;
   color: #d0aa9d;
   text-decoration: none;
+  text-align: center;
 }
 a:hover {
   color:rgb(255, 255, 255);

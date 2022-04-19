@@ -11,7 +11,6 @@ if (!empty($_POST['Id_User']) && !empty($_POST['Mdp']) ) {
     $Id_User = $_POST['Id_User'];
     //On met le post Mdp dans la variable $Mdp
     $Mdp = $_POST['Mdp'];
-    print_r($_POST);
 
 
     $stmt = $bdd->prepare('SELECT COUNT(*) AS nb FROM utilisateur WHERE Id_User = ? and mdp=?');
@@ -19,7 +18,6 @@ if (!empty($_POST['Id_User']) && !empty($_POST['Mdp']) ) {
     //Pas besoin de vérifier que ce qu'on recoit du formulaire soit totalement égale au contenu de la bdd 
     $stmt->execute(array($Id_User, $Mdp));
     $res = $stmt->fetch();
-    print_r($res);
 
     if ($res['nb']==1)
     {

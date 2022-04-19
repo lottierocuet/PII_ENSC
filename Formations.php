@@ -1,9 +1,11 @@
 <?php
 
 include_once "Fonctions.php";
-//dateUS_toFR();
-// check_connected();
-// session_start();
+include_once "NavBarre.php";
+check_connected(); 
+session_start();
+  //dateUS_toFR();
+
     
 
     $req = $bdd->query('SELECT * FROM pages  WHERE pages.Type = 1 ');
@@ -62,20 +64,12 @@ include_once "Fonctions.php";
 
 <body>
   
-<div class = "titre">
+
+<div class ="contenant">  
+
+    <div class = "titre">
       <h1> FORMATIONS </h1>
-    </div>
-  <div class ="contenant">
-  <!-- Présentation générale de la page ===================================== -->
-    
-
-
-
-    
-
-    
-    
-    <!--========================= Permet d'afficher toutes les expériences ========================= -->
+    </div>  
     
       <?php foreach ($req as $result) { ?>
       <div class="experiences">    
@@ -103,7 +97,31 @@ include_once "Fonctions.php";
         </div>
 
       </div>
+      
+
+          <?php if (check_connected()==true) {?>
+          <div class="lien">
+                
+          <a>  
+            <img src="images/supprimer.png"alt="Lien vers site externe"/>     
+          </a>     
+
+          <a>      
+            <img src="images/modifier.png"alt="Lien vers site externe"/>     
+          </a>     
+
+            <a href=<?= $result['Lien'] ?> target="_blank">
+            <img src="images/link.png"alt="Lien vers site externe"/>     
+            </a>
+          </div>
+
+        <?php }?>
       <?php }?>
+
+        <?php if (check_connected()==true) {?>
+          <!-- MODIFIER UNE PAGE -->
+          <?php  include ("ModifPages.php"); ?>
+        <?php } ?>
     
            
           

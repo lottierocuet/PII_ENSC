@@ -1,6 +1,7 @@
 <?php
 
   include_once "Fonctions.php";
+  include_once "NavBarre.php";
  // VERIFIER LACCES EN TANT QU'ADMIN OU VISITEUR
   check_connected(); 
   
@@ -14,7 +15,6 @@
   // AFFICHER LES EXPERIENCES
   $req = $bdd->query('SELECT * FROM pages  WHERE pages.Type = 0 ');
 
-  print_r($_SESSION);
 
 
 ?>
@@ -35,22 +35,20 @@
  
 
 <body>
-  <div class = "titre">
-      <h1> EXPERIENCES </h1>
-    </div>
+
+ 
   <div class ="contenant">
-    
+    <div class = "titre">
+      <h1> EXPERIENCES </h1>
+  </div> 
     <!-- =============================Présentation générale du site===================================== -->
     <div class = "presentation">  
       <h2>Lottie Rocuet Portfolio</h2>
         Bonjour à tous je suis la présidente du club poulpyboule, bien venu à vous dans mon Portfolio
     </div> 
-
-    
     
     <!--========================= Permet d'afficher toutes les expériences ========================= -->
-  <!-- Faire if php ==> Si connectée s'affiche sinon non -->
- 
+  
      
   <?php foreach ($req as $result) { ?>
       <div class="experiences">    
@@ -75,12 +73,13 @@
     <?php if (check_connected()==true) {?>
       <div class="lien">
             
+      <a>  
         <img src="images/supprimer.png"alt="Lien vers site externe"/>     
-            
+      </a>     
 
-            
+      <a>      
         <img src="images/modifier.png"alt="Lien vers site externe"/>     
-            
+      </a>     
 
         <a href=<?= $result['Lien'] ?> target="_blank">
         <img src="images/link.png"alt="Lien vers site externe"/>     

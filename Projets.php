@@ -8,10 +8,44 @@ session_start();
 
     $req = $bdd->query('SELECT * FROM projets   ');
 
-    if(isset($_GET['suppr']) )
+    // if(isset($_GET['suppr']) )
+    // {
+    //   $bdd->query('DELETE *FROM projets WHERE 'Id_Projets'=$_GET['Id_Projet']');
+    // }
+
+    if( !empty($_GET['Id_Projets']) && !empty($_GET['Titre']))
     {
-      $bdd->query('DELETE *FROM projets ');
-    }
+      //1) on récupère les données via des post et des variables 
+      $Titre=$_POST['Titre'];
+      $Id_Projets=$_GET['Id_Projets'];
+      
+    
+    
+      $req =$bdd->prepare(
+            "DELETE *FROM 'projets'( 
+                `Titre`, 
+                `Contexte`, 
+                `Description`,
+                `DateDebut`, 
+                `DateFin`, 
+                `Lien`,
+                `LienImgFond`,
+                `CodHexTypo`
+                
+            )VALUES ( ?,?,?,?,?,?,?,?)");
+            
+                    
+        $req->execute(array(
+            $Titre,
+            $Contexte,
+            $Description,
+            $DateDebut,
+            $DateFin,
+            $Lien,
+            $LienImg,
+            $CodHexTypo,
+        ));
+      }
 
 
 ?>
@@ -44,13 +78,22 @@ session_start();
     
       <style>
        .projets{
-         background-image: url(images/ProjetsTest.jpg);
-         opacity:70%;
+         background-image: url(  images/ProjetsTest.jpg); 
+         /*  <?php $result["LienImg"]; ?>*/ 
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: 100%;
+        opacity:70%;
+        margin-right:2%;
+        color:black;
+        padding:5%;
+        min-height:1000px
+        background-color: linear-gradient(0deg,white 70%);      
          
          
        }
        .titreProj{
-         color: #f00;
+         color: <?php $result["CodHexTypo"]; ?>
        }
        
       </style>
@@ -81,13 +124,12 @@ session_start();
         <div class="lien">
             
         <a>  
-        <input name="suppr" src="images/supprimer.png" type="submit" >  
-            <!-- <img alt="Lien vers site externe"/>  -->
-          <?$result ;
+         <img src="images/supprimer.png" alt="Lien vers site externe"/>  -->
+          <!-- <?$result ;
 
           if(mysql_query($query)){
-            echo 'le texte '.$_POST['Titre'].' est supprimé.'; 
-          }?>
+            echo 'le texte '.$_GET['Titre'].' est supprimé.'; 
+          }?> -->
 
            
         </a>     
@@ -96,9 +138,11 @@ session_start();
             <img src="images/modifier.png"alt="Lien vers site externe"/>     
           </a>     
 
-          <a href=<?= $result['Lien'] ?> target="_blank">
+          <?php if (!empty($result['Lien'])) {?>
+            <a href=<?= $result['Lien'] ?> target="_blank">
             <img src="images/link.png"alt="Lien vers site externe"/>     
-          </a>
+            </a>
+          <?php }?>
 
         </div>
 

@@ -123,6 +123,7 @@ a {
   text-decoration: none;
   text-align: center;
 }
+
 a:hover {
   color:rgb(255, 255, 255);
   text-decoration:double;
@@ -149,3 +150,25 @@ a:hover {
 
 }
 
+/* =========================== FOOTER =========================== */
+.footer{
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  opacity:100%;
+}
+img{
+  opacity:100%;
+}
+
+Footer {
+  
+  justify-content: center;
+  padding: 5px;
+  background-color: #e9eaec3c;
+  /* opacity: 5%; */
+  /* color: #fff; */
+}

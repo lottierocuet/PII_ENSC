@@ -44,7 +44,17 @@
     <!-- =============================Présentation générale du site===================================== -->
     <div class = "presentation">  
       <h2>Lottie Rocuet Portfolio</h2>
-        Bonjour à tous je suis la présidente du club poulpyboule, bien venu à vous dans mon Portfolio
+        <h3>Etudiante cogniticienne en 2ème année à l'ENSC (Ecole Nationale de Cognitique). </h3>
+        
+        <p>
+        Voici un petit morceau de moi, une vitrine de mon profil professionnel.
+       
+      Grande passionée par la e-santé et les nouvelles technologies autour de l'éducation,  </br> 
+    
+    </br> 
+    </p>
+
+        bon voyage à travers mon Portfolio
     </div> 
     
     <!--========================= Permet d'afficher toutes les expériences ========================= -->
@@ -73,6 +83,7 @@
       </div>  
 
     <?php if (check_connected()==true) {?>
+     
       <div class="lien">
             
       <a>  
@@ -81,11 +92,14 @@
 
       <a>      
         <img src="images/modifier.png"alt="Lien vers site externe"/>     
-      </a>     
+      </a>   
 
-        <a href=<?= $result['Lien'] ?> target="_blank">
-        <img src="images/link.png"alt="Lien vers site externe"/>     
-        </a>
+        <?php if (!empty($result['Lien'])) {?>
+          <a href=<?= $result['Lien'] ?> target="_blank">
+          <img src="images/link.png"alt="Lien vers site externe"/>     
+          </a>
+        <?php }?>
+
       </div>
 
     <?php }?>
@@ -98,9 +112,25 @@
 
   
       
-  
-
-      
+  <footer>
+  <ol class="footer">
+                             
+                             <li >
+                                 
+                                 <a href="https://www.linkedin.com/in/lottie-rocuet-1092a1172" target="_blank">
+                                     <img src="images/linkedin.png">
+                                     
+                                 </a>
+                                 
+                             </li>
+             
+                             <li>
+                             <a href="mailto:lottie.rocuet@gmail.com" target="_blank">
+                                     <img src="images/mail.png">                               
+                                 </a>
+                             </li>
+                     </ol> 
+  </footer>
           
   </div>
 </body>

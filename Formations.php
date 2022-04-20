@@ -68,10 +68,12 @@ session_start();
             <a>      
               <img src="images/modifier.png"alt="Lien vers site externe"/>     
             </a>  
-               
-            <a href=<?= $result['Lien'] ?> target="_blank">
+
+            <?php if (!empty($result['Lien'])) {?>
+              <a href=<?= $result['Lien'] ?> target="_blank">
               <img src="images/link.png"alt="Lien vers site externe"/>     
-            </a> 
+              </a>
+            <?php }?>
               
             </div>
 

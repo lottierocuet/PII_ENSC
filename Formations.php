@@ -1,9 +1,7 @@
 <?php
 
 include_once "Fonctions.php";
-include_once "NavBarre.php";
 check_connected(); 
-session_start();
 
     
 
@@ -29,10 +27,12 @@ session_start();
 
 <div class ="contenant">  
 
+<?php include_once "NavBarre.php"; ?>
     <div class = "titre">
       <h1> FORMATIONS </h1>
     </div>  
     
+    <div class ="bodyexp">
       <?php foreach ($req as $result) { ?>
       <div class="experiences">    
 	
@@ -61,8 +61,9 @@ session_start();
             <div class="lien">
 
                
-            <a>  
-              <img src="images/supprimer.png"alt="Lien vers site externe"/>     
+            <a href="Supprimer.php?Id_Pages=<?php echo $result['Id_Pages']?>">  
+            <img src="images/supprimer.png" alt="Lien vers site externe"/>  
+                           
             </a>     
 
             <a>      
@@ -80,16 +81,17 @@ session_start();
         <?php }?>
 
       </div>
+    
          
       <?php }?>
-
+</div>
         <?php if (check_connected()==true) {?>
           <!-- MODIFIER UNE PAGE -->
           <?php  include ("ModifPages.php"); ?>
         <?php } ?>
     
            
-          
+        <?php include_once "Footer.php"?> 
   </div>
 </body>
 </html>

@@ -1,11 +1,10 @@
 <?php
 
   include_once "Fonctions.php";
-  include_once "NavBarre.php";
+  
  // VERIFIER LACCES EN TANT QU'ADMIN OU VISITEUR
   check_connected(); 
   
-  session_start();
 
   //dateUS_toFR();
   
@@ -34,10 +33,17 @@
 <!-- =============================Présentation générale du site===================================== -->
  
 
-<body>
 
- 
+<body>
+  
+
+ <div class="popup">
+
+ </div>
+
   <div class ="contenant">
+
+    <?php include_once "NavBarre.php"; ?>
     <div class = "titre">
       <h1> EXPERIENCES </h1>
   </div> 
@@ -59,10 +65,11 @@
     
     <!--========================= Permet d'afficher toutes les expériences ========================= -->
   
-     
-  <?php foreach ($req as $result) { ?>
-      <div class="experiences">    
-	
+    <div class ="bodyexp">
+       
+
+    <?php foreach ($req as $result) { ?>
+	  <div class="experiences"> 
       <?php
         $dateDeb = date_create( $result['DateDebut']);
         echo date_format($dateDeb,"F-Y");?> 
@@ -80,15 +87,17 @@
         
         
             <?php echo $result["Description"]?> 
-      </div>  
+      </div> 
+      
 
     <?php if (check_connected()==true) {?>
      
       <div class="lien">
             
-      <a>  
-        <img src="images/supprimer.png"alt="Lien vers site externe"/>     
-      </a>     
+      <a href="Supprimer.php?Id_Pages=<?php echo $result['Id_Pages']?>">  
+         <img src="images/supprimer.png" alt="Lien vers site externe"/>  
+                           
+        </a>       
 
       <a>      
         <img src="images/modifier.png"alt="Lien vers site externe"/>     
@@ -109,29 +118,13 @@
     <!-- MODIFIER UNE PAGE -->
     <?php  include ("ModifPages.php"); ?>
   <?php } ?>
-
-  
-      
-  <footer>
-  <ol class="footer">
-                             
-                             <li >
-                                 
-                                 <a href="https://www.linkedin.com/in/lottie-rocuet-1092a1172" target="_blank">
-                                     <img src="images/linkedin.png">
-                                     
-                                 </a>
-                                 
-                             </li>
-             
-                             <li>
-                             <a href="mailto:lottie.rocuet@gmail.com" target="_blank">
-                                     <img src="images/mail.png">                               
-                                 </a>
-                             </li>
-                     </ol> 
-  </footer>
-          
   </div>
+
+  <!-- MODIFIER LE CSS QUI AFFICHE LE POP UP  -->
+  
+  <?php include_once "Footer.php"?>
+  </div>
+  
+
 </body>
 </html>

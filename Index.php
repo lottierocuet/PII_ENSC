@@ -1,7 +1,6 @@
 <?php
 
 include_once "Fonctions.php";
-session_start();
 
 $error=null;
 

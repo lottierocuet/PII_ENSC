@@ -34,71 +34,66 @@ check_connected();
 <div class ="contenant">
 
   <?php include_once "NavBarre.php"; ?>
-
+  <?php if (check_connected()==false) {?>
     <div class = "titre">
     <h1> PROJETS </h1>
     </div>
+    <?php } ?>
+    
   <!--========================= Permet d'afficher toutes les expériences ========================= -->
-      <div class="bodyproj">
+
     <?php foreach ($req as $result) { ?>
-      <div class="projets" style="background-image: url(<?php echo $result['LienImgFond']; ?> );
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: 100%;
-  opacity:70%;
-  margin-right:2%;
-  color:black;
-  padding:5%;
-  min-height:1000px;
-  background-color: linear-gradient(0deg,white 70%);      
-    "> 
-      
-      
-  
-      <?php
-        $dateDeb = date_create( $result['DateDebut']);
-        echo date_format($dateDeb,"F-Y");?> 
-          -
-        <?php 
-        $dateFin = date_create( $result['DateFin']);
-        echo date_format($dateFin,"F-Y");  ?> 
+      <div class="projets" style="background-image: url(<?php echo $result['LienImgFond']; ?> );"> </div>
+        <div class="bodyprojet">  
+          <?php
+          $dateDeb = date_create( $result['DateDebut']);
+          echo date_format($dateDeb,"F-Y");?> 
+            -
+          <?php 
+          $dateFin = date_create( $result['DateFin']);
+          echo date_format($dateFin,"F-Y");  ?> 
 
-      <div class="titreProj" >  
-        <h2 style="color:<?= $result["CodHexTypo"];?>">
-        <strong>
-          
-            <?php echo $result["Titre"]?> 
-        </strong> - 
-        <?php echo $result["Contexte"]?>
-        </h2>
-      </div>
-        
-        
-      <?php echo $result["Description"]?> 
-  </div>
-        
-      <?php if (check_connected()==true) {?>
-        <div class="lien">
+          <div class="titreProj" >  
+          <h2 style="color:<?= $result["CodHexTypo"];?>">
+          <strong>
             
-        <a href="Supprimer.php?Id_Projets=<?php echo $result['Id_Projets']?>">  
-         <img src="images/supprimer.png" alt="Lien vers site externe"/>  
-                           
-        </a>     
-
-          <a>      
-            <img src="images/modifier.png"alt="Lien vers site externe"/>     
-          </a>     
+              <?php echo $result["Titre"]?> 
+          </strong> - 
+          <?php echo $result["Contexte"]?>
+          </h2>
+          </div>
+          
+          
+          <?php echo $result["Description"]?> 
+    
 
           <?php if (!empty($result['Lien'])) {?>
-            <a href=<?= $result['Lien'] ?> target="_blank">
-            <img src="images/link.png"alt="Lien vers site externe"/>     
-            </a>
-          <?php }?>
 
+              <a href=<?= $result['Lien'] ?> target="_blank">
+              <img src="images/link.png"alt="Lien vers site externe"/>     
+              </a>
+              <?php }?>
+      
         </div>
+        <?php } ?> 
+          
+        <?php if (check_connected()==true) {?>
+          <div class="lien">
+              
+          <a href="Supprimer.php?Id_Projets=<?php echo $result['Id_Projets']?>">  
+          <img src="images/supprimer.png" alt="Lien vers site externe"/>  
+                            
+          </a>     
 
-      <?php }?>
-  <?php } ?> 
+            <a>      
+              <img src="images/modifier.png"alt="Lien vers site externe"/>     
+            </a>   
+          </div>
+        <?php }?>
+        </div>
+        
+
+
      
 
     <?php if (check_connected()==true) {?>

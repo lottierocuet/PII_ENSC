@@ -28,9 +28,13 @@ check_connected();
 <div class ="contenant">  
 
 <?php include_once "NavBarre.php"; ?>
-    <div class = "titre">
-      <h1> FORMATIONS </h1>
-    </div>  
+
+<?php if (check_connected()==false) {?>
+          <div class = "titre">
+        <h1> FORMATIONS </h1>
+        </div>  
+<?php } ?>
+    
     
     <div class ="bodyexp">
       <?php foreach ($req as $result) { ?>

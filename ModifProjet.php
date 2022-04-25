@@ -31,7 +31,6 @@ check_connected();
                 
             )VALUES ( ?,?,?,?,?,?,?,?)");
 
-            echo $CodHexTypo;
             
                     
         $req->execute(array(
@@ -45,7 +44,6 @@ check_connected();
             $CodHexTypo,
         ));
             
-        echo $CodHexTypo;
     }
 
 
@@ -63,7 +61,7 @@ check_connected();
             <div class = "contenant">
 
             <div class = "titre">
-            <h1 >PUBLIER UN PROJET</h1>
+            <h1 >PUBLIER <br>UN PROJET</h1>
             </div>
                 <br/>
                 <br/>

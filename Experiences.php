@@ -44,9 +44,12 @@
   <div class ="contenant">
 
     <?php include_once "NavBarre.php"; ?>
-    <div class = "titre">
-      <h1> EXPERIENCES </h1>
-  </div> 
+    <?php if (check_connected()==false) {?>
+          <div class = "titre">
+            <h1> EXPERIENCES </h1>
+        </div> 
+    <?php } ?>
+    
     <!-- =============================Présentation générale du site===================================== -->
     <div class = "presentation">  
       <h2>Lottie Rocuet Portfolio</h2>
@@ -65,13 +68,12 @@
     
     <!--========================= Permet d'afficher toutes les expériences ========================= -->
   
-    <div class ="bodyexp">
        
 
     <?php foreach ($req as $result) { ?>
 	  <div class="experiences"> 
       <?php
-        $dateDeb = date_create( $result['DateDebut']);
+       $dateDeb = date_create( $result['DateDebut']);
         echo date_format($dateDeb,"F-Y");?> 
           -
         <?php 
@@ -86,9 +88,19 @@
           </h2>
         
         
-            <?php echo $result["Description"]?> 
-      </div> 
-      
+          <?php echo $result["Description"]?>
+            
+            
+            <?php if (!empty($result['Lien'])) {?>
+          <a href=<?= $result['Lien'] ?> target="_blank">
+          <img src="images/link.png"alt="Lien vers site externe"/>     
+          </a>
+          
+        
+       <?php }?> 
+       
+       
+     
 
     <?php if (check_connected()==true) {?>
      
@@ -97,23 +109,21 @@
       <a href="Supprimer.php?Id_Pages=<?php echo $result['Id_Pages']?>">  
          <img src="images/supprimer.png" alt="Lien vers site externe"/>  
                            
-        </a>       
+      </a>       
 
       <a>      
         <img src="images/modifier.png"alt="Lien vers site externe"/>     
       </a>   
+    
 
-        <?php if (!empty($result['Lien'])) {?>
-          <a href=<?= $result['Lien'] ?> target="_blank">
-          <img src="images/link.png"alt="Lien vers site externe"/>     
-          </a>
-        <?php }?>
-
-      </div>
 
     <?php }?>
-  <?php } ?> 
-
+  </div> 
+      <?php }?> 
+    </div>  
+ 
+  
+</div>
   <?php if (check_connected()==true) {?>
     <!-- MODIFIER UNE PAGE -->
     <?php  include ("ModifPages.php"); ?>
@@ -122,9 +132,38 @@
 
   <!-- MODIFIER LE CSS QUI AFFICHE LE POP UP  -->
   
-  <?php include_once "Footer.php"?>
-  </div>
   
+  </div>
+  <Footer>
+                    <?php if (check_connected()==true) {?>
+                    
+                        <a href="Lougout.php">  Déconnexion </a> 
+                            <!-- <img src="images/lougout.png" alt="Lien vers site externe"/>  -->
+                        
+                     
+                    <?php } ?>
+                  
+                      <ol >      
+                         <li >
+                           
+                           <a href="https://www.linkedin.com/in/lottie-rocuet-1092a1172" target="_blank" class="contact">
+                               <img src="images/linkedin.png">
+                               
+                           </a>
+                           
+                       </li>
+       
+                       <li>
+                       <a href="mailto:lottie.rocuet@gmail.com" target="_blank" class="contact">
+                               <img src="images/mail.png">                               
+                           </a>
+                       </li>
+
+                       </ol> 
+                        
+
+                 
+       </Footer>
 
 </body>
 </html>

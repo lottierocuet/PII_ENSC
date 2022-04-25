@@ -22,11 +22,11 @@ body{
   position: fixed;
   transform: rotate(90deg);
   font-size: 150%;
-  padding :20px;
+  padding-top: 20px;
   min-width: 350px;
-  top: 25%; 
-  left: -12%; 
-  opacity:75%;
+  top: 247px;
+  left: -121px;
+  opacity: 75%;
 }
 
 .contenant {
@@ -42,7 +42,6 @@ body{
   flex-direction: column;
   row-gap: 70px;
   padding-right:10%;
-  row-gap: 70px;
   
 }
 
@@ -53,9 +52,8 @@ body{
 .experiences{
   padding-left: 12%;
   padding-right: 12%;
-  margin-bottom:10%;
-  
-  
+  margin-bottom: -29px;
+  padding-bottom: 68px;
 }
 
 a{
@@ -70,12 +68,13 @@ a{
 }
 .lien{
   display: flex;
-  justify-content: flex-end;
+  justify-content: right;
   flex-direction: row;
   row-gap: 10%;
   padding-right: 10%;
   justify-content: space-around;
   align-items: right;
+  padding-top:-60px;
 } 
 
 
@@ -87,31 +86,34 @@ a{
   width: 80%;
   padding: 5%;
   color:black;
-  margin : 10%;
+  margin : 10%
 
 }
 
-/* .bodypro{
-  padding-left: 12%;
-  padding-right: 12%;
-  margin-bottom:10%;
-} */
 
 .projets{
-
- background-repeat: no-repeat;
- background-size: 100%;
- background-position: 100%;
- opacity:70%;
- margin-right:2%;
- color:black;
- padding:5%;
- min-height:1000px;
- background-color: linear-gradient(0deg,white 70%); 
-      
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: 157px;
+  min-height: 349px;
+  padding-top: 130px;
+  margin-top: 104px;
+  margin-left: 41px;
+  margin-right: -72px;
+  margin-bottom: 74px;
+  opacity: 20%;
+  z-index: 3;
+}
   
+.bodyprojet{
+  z-index: 3;
+  opacity: 100%;
+  margin-top: -683px;
+  margin-left: 102px;
+  margin-bottom: 86px;
   
 }
+
 
 
 
@@ -154,6 +156,7 @@ a {
   color: #d0aa9d;
   text-decoration: none;
   text-align: center;
+  opacity:100%;
 }
 
 a:hover {
@@ -184,22 +187,37 @@ a:hover {
 
 /* =========================== FOOTER =========================== */
 
-footer {
-  opacity:10%;
-  padding-left: 0px;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  flex-direction: column;
-  grid-template-rows: auto 1fr auto;
-  
-  
+footer{
+    position: static;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #111;
+    height: auto;
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-right: 50px;
+   
+
 }
-li,footer{
-  justify-content: flex-end;
+
+.logout{
+  display:flex;
+    align-items:flex-start;
+    justify-content: left;
+    text-align: left;
+  padding-right: 20px;
+}
+.contact{
+  display:flex;
+  align-items:flex-end;
+  text-align: right;
+  padding-left:20px;
   justify-content: space-between;
 }
-img,footer{
-  opacity:100%;
-  
-}
+
+

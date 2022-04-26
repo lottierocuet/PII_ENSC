@@ -111,9 +111,25 @@ a{
   margin-top: -683px;
   margin-left: 102px;
   margin-bottom: 86px;
+  color:#ffffff;
   
 }
 
+/* =========================== POPUP=========================== */
+.popup{
+  position:absolute;
+opacity:0;
+z-index: 10;
+
+}
+.cadre#Modif{
+  opacity:0;
+}
+
+a#Modif{
+  border:0;
+  background-color: rgba(0,0, 0, 0);
+}
 
 
 
@@ -122,13 +138,13 @@ ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  
   list-style-type: none;
   margin-block-start: 0px;
   margin-block-end: 0px;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   padding-inline-start: 0px;
+  position:center;
 }
 nav {
   width: 100%;
@@ -137,6 +153,7 @@ nav {
 
 }
 .navbarre{
+  z-index:8;
   align-content: center;
   margin: 5%;
   text-align: right;
@@ -146,9 +163,10 @@ nav {
 
 li {
   list-style: none;
-  
   flex-direction: row;
-  float: right;
+  float: center;
+  opacity:100%;
+  
 }
 a {
   font-family: monserrat, sans-serif;
@@ -156,15 +174,17 @@ a {
   color: #d0aa9d;
   text-decoration: none;
   text-align: center;
-  opacity:100%;
+  
 }
 
 a:hover {
-  color:rgb(255, 255, 255);
+  opacity:100%;
+  color:white;
   text-decoration:double;
-  font-size: 160%;
+  font-size: 180%;
+  font-stretch:expanded;
   font-weight: bold;
-  transition: 300ms;
+  transition: 500ms;
   
 }
 

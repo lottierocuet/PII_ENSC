@@ -4,7 +4,7 @@ include_once "Fonctions.php";
 // check_gestionnaire();
 check_connected();
 
-    if( !empty($_POST['Type'])&&!empty($_POST['Titre']))
+    if( isset($_GET['Id_Projets']))
     {
       //1) on récupère les données via des post et des variables 
       $Titre=$_POST['Titre'];
@@ -17,30 +17,10 @@ check_connected();
       $LienImg=$_POST['LienImg'];
     
     
-      $req =$bdd->prepare(
-            "INSERT INTO `pages`(
-                
-                `Titre`,
-                `Type`, 
-                `DateDebut`, 
-                `DateFin`, 
-                `Localisation`, 
-                `Description`, 
-                `Lien`, 
-                `LienImg` 
-            ) VALUES ( ?,?,?,?,?,?,?,?)");
-            
+      $req =$bdd->prepare("UPDATE `pages`
+      SET *WHERE pages.Id_Pages=?");
                     
-        $req->execute(array(
-            $Titre,
-            $Type,
-            $DateDebut,
-            $DateFin,
-            $Localisation,
-            $Description,
-            $Lien,
-            $LienImg,
-            ));
+      $req->execute(array($_GET['Id_Pages']));
             
     }
 
@@ -64,7 +44,7 @@ check_connected();
                 <br/>
                 <br/>
                 
-                <form method="POST" action="ModifPages.php" class ="cadre"> 
+                <form method="POST" action="PopUpModifPages.php" class ="cadre"> 
                     
 
                     <label for="Titre">Intitulé de l'expérience :</label> 

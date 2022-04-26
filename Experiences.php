@@ -25,7 +25,7 @@
   <meta charset="utf-8">
   <title>Expérience</title>
   <link rel="stylesheet" href="stylesheet.css">
-  <!-- <script src="script.js"></script> -->
+
 
  
 </head>  
@@ -36,10 +36,33 @@
 
 <body>
   
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
 
- <div class="popup">
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
 
- </div>
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
 
   <div class ="contenant">
 
@@ -91,15 +114,14 @@
           <?php echo $result["Description"]?>
             
             
-            <?php if (!empty($result['Lien'])) {?>
+          <?php if (!empty($result['Lien'])) {?>
           <a href=<?= $result['Lien'] ?> target="_blank">
           <img src="images/link.png"alt="Lien vers site externe"/>     
           </a>
-          
         
        <?php }?> 
        
-       
+          </div>
      
 
     <?php if (check_connected()==true) {?>
@@ -111,59 +133,42 @@
                            
       </a>       
 
-      <a>      
-        <img src="images/modifier.png"alt="Lien vers site externe"/>     
+      <a id="Modif">      
+        <button type="button" onclick=PopupPage() id="myBtn">
+          <img src="images/modifier.png"alt="Lien vers site externe"/>
+        </button>   
       </a>   
-    
+
+      </div> 
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        Hello :)
+        <!-- <?php //include "PopUpModifPages.php"?> -->
+        <span class="close">&times;</span>
+      </div>
+    </div>
+      
+    </div> 
 
 
     <?php }?>
-  </div> 
-      <?php }?> 
-    </div>  
  
+  <?php }?>
   
 </div>
   <?php if (check_connected()==true) {?>
     <!-- MODIFIER UNE PAGE -->
-    <?php  include ("ModifPages.php"); ?>
+ <?php include "ModifPages.php" ?>
+    
   <?php } ?>
   </div>
 
-  <!-- MODIFIER LE CSS QUI AFFICHE LE POP UP  -->
+
   
   
   </div>
-  <Footer>
-                    <?php if (check_connected()==true) {?>
-                    
-                        <a href="Lougout.php">  Déconnexion </a> 
-                            <!-- <img src="images/lougout.png" alt="Lien vers site externe"/>  -->
-                        
-                     
-                    <?php } ?>
-                  
-                      <ol >      
-                         <li >
-                           
-                           <a href="https://www.linkedin.com/in/lottie-rocuet-1092a1172" target="_blank" class="contact">
-                               <img src="images/linkedin.png">
-                               
-                           </a>
-                           
-                       </li>
-       
-                       <li>
-                       <a href="mailto:lottie.rocuet@gmail.com" target="_blank" class="contact">
-                               <img src="images/mail.png">                               
-                           </a>
-                       </li>
-
-                       </ol> 
-                        
-
-                 
-       </Footer>
+  <?php include_once "Footer.php"?> 
 
 </body>
 </html>

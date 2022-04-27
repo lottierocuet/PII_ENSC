@@ -106,13 +106,13 @@
               </button> 
             
               <!-- Trigger/Open The Modal -->
-              <button id="myBtn">
+              <button id="<?php echo $result['Id_Pages']?>">
                 <img src="images/modifier.png"alt="Lien vers site externe"/>
               </button>
             </div>
 
             <!-- The Modal -->
-            <div id="myModal" class="modal">
+            <div id="Modal<?php echo $result['Id_Pages']?>" class="modal">
 
               <!-- Modal content -->
               <div class="modal-content">
@@ -168,10 +168,10 @@
             </div>
             <script>
               // Get the modal
-              var modal = document.getElementById("myModal");
+              var modal = document.getElementById("Modal<?php echo $result['Id_Pages']?>");
 
               // Get the button that opens the modal
-              var btn = document.getElementById("myBtn");
+              var btn = document.getElementById("myBtn<?php echo $result['Id_Pages']?>");
 
               // Get the <span> element that closes the modal
               var span = document.getElementsByClassName("close")[0];

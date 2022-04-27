@@ -1,6 +1,7 @@
 
 <?php
 include_once "fonctions.php";
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,14 +11,13 @@ include_once "fonctions.php";
 
 <Footer>
                     <?php if (check_connected()==true) {?>
-                    
-                        <a href=<?php logout();?>>  Déconnexion </a> 
-                            <!-- <img src="images/lougout.png" alt="Lien vers site externe"/>  -->
-                        
-                     
+
+                        <div class="deconnexion">
+                            <a href="Lougout.php" action="Logout.php">  Déconnexion </a> 
+                        </div>
                     <?php } ?>
                   
-                      <ol >      
+                      <ul >      
                          <li >
                            
                            <a href="https://www.linkedin.com/in/lottie-rocuet-1092a1172" target="_blank" class="contact">
@@ -33,7 +33,7 @@ include_once "fonctions.php";
                            </a>
                        </li>
 
-                       </ol> 
+                       </ul> 
                         
 
                  

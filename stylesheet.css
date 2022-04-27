@@ -45,7 +45,7 @@ body{
   
 }
 
-.bodyexp{
+.bodyform{
   padding-top:15%;
   
 }
@@ -55,8 +55,15 @@ body{
   margin-bottom: -29px;
   padding-bottom: 68px;
 }
+.formations {
+  padding-left: 12%;
+  padding-right: 12%;
+  margin-bottom: -29px;
+  padding-bottom: 68px;
+}
 
 a{
+  z-index: 10;
   display: flex;
   justify-content: flex-end; 
   flex-direction: row; 
@@ -67,6 +74,7 @@ a{
   
 }
 .lien{
+  z-index: 10;
   display: flex;
   justify-content: right;
   flex-direction: row;
@@ -114,12 +122,20 @@ a{
   
 }
 
+.a,.ajouter{
+z-index: 1;;
+position: fixed;
+ opacity: 70%;
+right: 20px;
+bottom: 20px;
+}
+
 /* =========================== POPUP=========================== */
 button {
   appearance: auto;
     writing-mode: horizontal-tb !important;
     text-rendering: auto;
-    color: #00ffff00;
+    color: #ffffff;
     text-transform: none;
     text-indent: 0px;
     text-shadow: none;
@@ -171,15 +187,15 @@ button {
 }
 
 /* The Close Button */
-.close {
+span {
     color: #fdfdfdb0;
     float: right;
     font-size: 60px;
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+span:hover,
+span:focus {
   color: rgb(255, 255, 255);
   text-decoration: none;
   cursor: pointer;
@@ -276,10 +292,14 @@ footer{
     flex-wrap: wrap;
     flex-direction: row;
     align-items: flex-end;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding-right: 50px;
+
    
 
+}
+button,footer{
+  opacity:100%;
 }
 
 .logout{
@@ -295,6 +315,12 @@ footer{
   text-align: right;
   padding-left:20px;
   justify-content: space-between;
+}
+
+.footer,.deconnexion{
+    padding: 22px;
+    position: absolute;
+    padding-right: 1841px;
 }
 
 

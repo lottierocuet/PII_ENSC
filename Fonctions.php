@@ -30,10 +30,13 @@
 
 	}
 
-	function logout()
-	{
-	session_destroy();
-	}
+	// function logout()
+	// {
+	// 	session_start();
+	// 	unset($_SESSION);
+	// 	session_destroy();
+	// 	header("Location: Index.php");
+	// }
 
 
 	$error = null;

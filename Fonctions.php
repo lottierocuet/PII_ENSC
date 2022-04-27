@@ -30,6 +30,11 @@
 
 	}
 
+	function logout()
+	{
+	session_destroy();
+	}
+
 
 	$error = null;
 	$Type=null;

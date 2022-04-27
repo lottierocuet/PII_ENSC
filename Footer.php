@@ -6,12 +6,12 @@ include_once "fonctions.php";
 <html>
 
     <link rel="stylesheet" href="stylesheet.css">
-<body>
+
 
 <Footer>
                     <?php if (check_connected()==true) {?>
                     
-                        <a href="Lougout.php">  Déconnexion </a> 
+                        <a href=<?php logout();?>>  Déconnexion </a> 
                             <!-- <img src="images/lougout.png" alt="Lien vers site externe"/>  -->
                         
                      
@@ -38,6 +38,6 @@ include_once "fonctions.php";
 
                  
        </Footer>
-</body>
+
 
 </html>

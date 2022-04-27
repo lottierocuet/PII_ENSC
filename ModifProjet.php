@@ -61,7 +61,7 @@ check_connected();
             <div class = "contenant">
 
             <div class = "titre">
-            <h1 >PUBLIER <br>UN PROJET</h1>
+            <h1 ><br>PUBLIER</h1>
             </div>
                 <br/>
                 <br/>

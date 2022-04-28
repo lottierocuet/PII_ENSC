@@ -14,7 +14,7 @@ check_connected();
       $DateFin=$_POST['DateFin'];
       $Lien=$_POST['Lien'];
       $LienImg=$_POST['LienImg'];
-      $CodHexTypo=$_POST['CodeHexTypo'];
+      $CodHexTypo=$_POST['CodHexTypo'];
 
     
     
@@ -30,6 +30,7 @@ check_connected();
                 `CodHexTypo`
                 
             )VALUES ( ?,?,?,?,?,?,?,?)");
+
             
                     
         $req->execute(array(
@@ -60,7 +61,7 @@ check_connected();
             <div class = "contenant">
 
             <div class = "titre">
-            <h1 >PUBLIER UN PROJET</h1>
+            <h1 ><br>PUBLIER</h1>
             </div>
                 <br/>
                 <br/>
@@ -101,7 +102,7 @@ check_connected();
 
                     <label for="CodHexTypo">Couleur de la typo</label> 
                     <br/> 
-                    <input  type="color" />
+                    <input  type="color" name="CodHexTypo"/>
                     <br/><br/>
                             
                     <input class = "Ajout" type="submit" value="Publier"/>

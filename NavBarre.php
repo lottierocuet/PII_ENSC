@@ -1,16 +1,9 @@
 <!DOCTYPE html>
+
+<link rel="stylesheet" href="stylesheet.css">
 <html>
 
-<head>
-    <meta charset="utf-8">
-    
-    <title></title>
-    <link rel="stylesheet" href="stylesheet.css">
-    
-</head>
-<body>
-   
-<div class="contenant">
+
  	<nav>
                
         
@@ -38,7 +31,6 @@
 	    </ul> 
 	      
     </nav>
-</div>
- 
-</body>
+
+
 </html>

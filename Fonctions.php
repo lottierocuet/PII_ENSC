@@ -10,7 +10,7 @@
 
 	// activation des erreurs PDO
 	$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-     
+	session_start();
 	
 	// VERIFIE SI L'UTILISATEUR EST CONNECTE EN TANT QU'ADMIN 
 	function check_connected()
@@ -29,6 +29,14 @@
 		}
 
 	}
+
+	// function logout()
+	// {
+	// 	session_start();
+	// 	unset($_SESSION);
+	// 	session_destroy();
+	// 	header("Location: Index.php");
+	// }
 
 
 	$error = null;
